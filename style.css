@@ -11,14 +11,13 @@ body {
   word-break: keep-all;
 }
 
-
 h1 {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  font-family: "Courier New", monospace;
-  font-size: 15pt;
+  font-family: Courier New;
+  font-size: 13pt;
   font-weight: 500;
   z-index: 1500;
 }
@@ -28,29 +27,13 @@ h1 {
   color: inherit;
 }
 
-.content p {
-  font-family: "Courier New", sans-serif;  /* 원하는 폰트 */
-  font-size: 14px;                          /* 글자 크기 */
-  font-weight: 600;                         /* 굵기 */
-  margin-top: 30px;
-  margin-bottom: 5px;
-}
-
-/* 리스트 항목 스타일 */
-.content .nobullet {
-  font-family: "Courier New", sans-serif;   /* 원하는 폰트 */
-  font-size: 12px;                          /* 글자 크기 */
-  line-height: 18px;                        /* 줄 간격 */
-  margin-left: 0;                            /* 들여쓰기 제거 */
-  margin-bottom: 4px;
-}
 /* h1 아래 가로선 */
 .top-line {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;     /* h1이 들어갈 공간 + 원래 선 위치 */
+  height: 60px;     /* h1이 들어갈 공간 + 원래 선 위치 */
   background: white;
   z-index: 1400;
   border-bottom: 1px solid black;
@@ -58,32 +41,41 @@ h1 {
               inset 0 -2px 0 black;  /* 바깥 검정 */
 }
 
+
 /* 메뉴 왼쪽 고정 */
 .menu {
   position: fixed;
-  top: 80px;
+  top: 70px;
   left: 20px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
   font-family: "Courier New", monospace;
   z-index: 1200;
 }
 
 /* 메뉴 글씨 스타일 */
 .menu a {
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: none;
   color: black;
   padding-left: 0;
   margin-left: 0;
 }
-
+.menu-bg {
+  position: fixed;
+  top: 60px;  /* top-line 아래 */
+  left: 0;
+  width: 120px;  /* 세로선 위치 */
+  height: calc(100vh - 70px);
+  background: white;
+  z-index: 1000; /* 메뉴보다 아래, 콘텐츠보다 위 */
+}
 /* 메뉴 오른쪽 전체 세로선 */
 .menu::after {
   content: "";
   position: fixed;
-  top: 70px;  /* top-line 아래 */
+  top: 60px;  /* top-line 아래 */
   left: 120px;
 
   width: 3px;                /* ★ 꼭 필요! 줄 너비 */
@@ -99,6 +91,31 @@ h1 {
 
   z-index: 1200;
 }
+
+.
+.content p {
+  font-family: "Courier New";  /* 원하는 폰트 */
+  font-weight: 400;                         /* 굵기 */
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+body .content p {
+  font-size: 13px !important;
+  font-family: "Courier New" !important;
+  font-weight: 400;
+}
+
+/* 리스트 항목 스타일 */
+.content .nobullet {
+  font-family: "Courier New", sans-serif;   /* 원하는 폰트 */
+  font-size: 12px;                          /* 글자 크기 */
+  line-height: 18px;                        /* 줄 간격 */
+  margin-left: 0;                            /* 들여쓰기 제거 */
+  margin-bottom: 4px;
+}
+
+
 
 /* 콘텐츠(각 페이지)는 메뉴 오른쪽에서 시작됩니다 */
 .content {
@@ -162,3 +179,10 @@ details {
   display: block;
   font-size: 14px;
 }
+footer {
+  font-family: Courier New;
+  font-size: 13px;
+  position: fixed;
+  bottom: 0;
+  left: 5px;
+  width: 100%;
